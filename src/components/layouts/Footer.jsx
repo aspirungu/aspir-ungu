@@ -33,27 +33,27 @@ export default function Footer() {
                     <div className="flex flex-col gap-4 md:gap-5 ">
                         <Text className="font-bold text-foreground">Hubungi Kami</Text>
                         <div className="flex flex-col gap-3 md:gap-4">
-                            <a href="mailto:bem@amikompurwokerto.ac.id" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
+                            <a href="mailto:aspirungu001@gmail.com" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
                                 <div className="p-2 rounded-lg bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
                                     <Mail className="w-4 h-4" />
                                 </div>
-                                <span className="break-all">bem@amikompurwokerto.ac.id</span>
+                                <span className="break-all">aspirungu001@gmail.com</span>
                             </a>
-                            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
+                            <a href="https://wa.me/6283110470655" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted hover:text-primary transition-colors group">
                                 <div className="p-2 rounded-lg bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
                                     <FaWhatsapp className="w-4 h-4" />
                                 </div>
-                                +62 812-3456-7890
+                                +62 8311-0470-655
                             </a>
                         </div>
 
                         <div className="flex flex-col gap-3">
                             <Text className="text-sm font-semibold text-foreground">Media Sosial</Text>
                             <div className="flex gap-4">
-                                <a href="https://instagram.com/bemamikompwt" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-primary-light text-primary hover:bg-primary hover:text-white transition-all">
+                                <a href="https://www.instagram.com/bem_amikompwt/" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-primary-light text-primary hover:bg-primary hover:text-white transition-all">
                                     <FaInstagram size={20} />
                                 </a>
-                                <a href="https://tiktok.com/@bemamikompwt" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-primary-light text-primary hover:bg-primary hover:text-white transition-all">
+                                <a href="https://www.tiktok.com/@bem_amikompwt" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-primary-light text-primary hover:bg-primary hover:text-white transition-all">
                                     <FaTiktok size={18} />
                                 </a>
                             </div>
