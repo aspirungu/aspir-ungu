@@ -14,7 +14,7 @@ import { emailSchema, otpSchema, submitAspirationSchema } from '@/utils/validato
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 
 // Step constants
 const STEP_EMAIL = 'email'
@@ -209,19 +209,6 @@ export default function BuatPengaduanContent({ category }) {
 
     return (
         <Hero>
-            {/* react-hot-toast container */}
-            <Toaster
-                position="top-center"
-                toastOptions={{
-                    duration: 4000,
-                    style: {
-                        borderRadius: '12px',
-                        fontSize: '14px',
-                        maxWidth: '420px',
-                    },
-                }}
-            />
-
             <HeroText>Pengaduan {category.name}</HeroText>
 
             {/* ── STEP 1: Email ── */}
