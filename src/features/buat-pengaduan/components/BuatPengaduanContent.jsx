@@ -213,10 +213,10 @@ export default function BuatPengaduanContent({ category }) {
 
             {/* ── STEP 1: Email ── */}
             <StepPanel visible={step === STEP_EMAIL}>
-                <div className="sm:w-90 md:w-100 lg:w-120 flex flex-col text-left gap-4 bg-secondary/40 backdrop-blur-xs border-4 border-primary shadow-4xl px-6 py-8 rounded-4xl">
+                <div className="sm:w-90 md:w-100 lg:w-150 flex flex-col text-left gap-4 bg-secondary/40 backdrop-blur-xs border-4 border-primary shadow-4xl px-6 py-8 rounded-4xl [&_label]:lg:text-lg [&_label]:xl:text-xl [&_input]:lg:text-lg [&_input]:xl:text-xl [&_p]:lg:text-base [&_p]:xl:text-xl [&_button_p]:lg:text-lg [&_button_p]:xl:text-xl">
                     <div>
-                        <p className="font-semibold text-base mb-1">Verifikasi Email</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-semibold text-base lg:text-lg xl:text-2xl mb-1">Verifikasi Email</p>
+                        <p className="text-sm lg:text-base xl:text-xl text-muted-foreground">
                             Masukan email kamu untuk menerima kode OTP sebagai langkah verifikasi sebelum mengisi pengaduan.
                         </p>
                     </div>
@@ -249,10 +249,10 @@ export default function BuatPengaduanContent({ category }) {
 
             {/* ── STEP 2: OTP Verification ── */}
             <StepPanel visible={step === STEP_OTP}>
-                <div className="sm:w-90 md:w-100 lg:w-120 flex flex-col text-left gap-4 bg-secondary/40 backdrop-blur-xs border-4 border-primary shadow-4xl px-6 py-8 rounded-4xl">
+                <div className="sm:w-90 md:w-100 lg:w-150 flex flex-col text-left gap-4 bg-secondary/40 backdrop-blur-xs border-4 border-primary shadow-4xl px-6 py-8 rounded-4xl [&_label]:lg:text-lg [&_label]:xl:text-xl [&_input]:lg:text-lg [&_input]:xl:text-xl [&_p]:lg:text-base [&_p]:xl:text-xl [&_button_p]:lg:text-lg [&_button_p]:xl:text-xl">
                     <div>
-                        <p className="font-semibold text-base mb-1">Masukan Kode OTP</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-semibold text-base lg:text-lg xl:text-2xl mb-1">Masukan Kode OTP</p>
+                        <p className="text-sm lg:text-base xl:text-xl text-muted-foreground">
                             Kode OTP telah dikirim ke{' '}
                             <span className="font-semibold text-primary">{emailValue}</span>.
                             Cek inbox atau folder spam kamu.
@@ -307,7 +307,7 @@ export default function BuatPengaduanContent({ category }) {
             <StepPanel visible={step === STEP_FORM}>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="sm:w-90 md:w-100 lg:w-180 flex flex-col text-left gap-2 bg-secondary/40 backdrop-blur-xs border-4 border-primary shadow-4xl px-4 py-8 rounded-4xl"
+                    className="sm:w-90 md:w-100 lg:w-195 flex flex-col text-left gap-2 bg-secondary/40 backdrop-blur-xs border-4 border-primary shadow-4xl px-4 py-8 rounded-4xl [&_label]:lg:text-lg [&_label]:xl:text-xl [&_input]:lg:text-lg [&_input]:xl:text-xl [&_textarea]:lg:text-lg [&_textarea]:xl:text-xl [&_button_p]:lg:text-lg [&_button_p]:xl:text-xl"
                 >
                     {/* Subtle submit loading bar at top */}
                     {loadingSubmit && (
@@ -331,15 +331,15 @@ export default function BuatPengaduanContent({ category }) {
                         <div className="lg:w-120">
                             {/* Email (pre-filled, read-only) */}
                             <div className="mb-2">
-                                <label className="text-sm font-medium">Email Pelapor</label>
+                                <label className="text-sm lg:text-lg xl:text-xl font-medium">Email Pelapor</label>
                                 <div className="flex items-center gap-2 mt-1">
                                     <input
                                         type="email"
                                         value={verifiedEmail}
                                         readOnly
-                                        className="flex-1 rounded-lg border border-primary/40 bg-primary/5 px-3 py-2 text-sm opacity-70 cursor-not-allowed"
+                                        className="flex-1 rounded-lg border border-primary/40 bg-primary/5 px-3 py-2 text-sm lg:text-lg xl:text-xl opacity-70 cursor-not-allowed"
                                     />
-                                    <span className="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full whitespace-nowrap">
+                                    <span className="text-xs lg:text-sm xl:text-base font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full whitespace-nowrap">
                                         ✓ Terverifikasi
                                     </span>
                                 </div>
@@ -387,7 +387,7 @@ export default function BuatPengaduanContent({ category }) {
                         <FormImage register={register} name="image_url" />
                     </div>
 
-                    <Text className="text-xs md:text-sm mt-2 font-bold">
+                    <Text className="text-xs md:text-sm lg:text-base xl:text-xl mt-2 font-bold">
                         Note: Identitas pelapor diperlukan untuk follow up terkait pengaduan yang diberikan. Data identitas yang diberikan pelapor tidak akan berpengaruh terhadap nilai.
                     </Text>
 
