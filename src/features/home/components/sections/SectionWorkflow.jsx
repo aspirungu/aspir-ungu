@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaEdit, FaTicketAlt, FaSearch, FaCheckCircle } from 'react-icons/fa'
+import TextHome from "@/components/ui/typography/TextHome"
 
 const steps = [
     {
@@ -33,9 +34,9 @@ export default function SectionWorkflow() {
                     <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
                         Cara <span className="italic text-primary">Penggunaan</span>
                     </h2>
-                    <p className="text-muted text-sm max-w-lg mx-auto">
+                    <TextHome className="max-w-lg mx-auto">
                         Ikuti langkah-langkah sederhana berikut untuk menyampaikan aspirasimu melalui platform Aspir Ungu.
-                    </p>
+                    </TextHome>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

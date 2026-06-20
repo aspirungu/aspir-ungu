@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
+import TextHome from "@/components/ui/typography/TextHome"
 
 export default function SectionThree() {
     const menuOptions = [
@@ -28,9 +29,9 @@ export default function SectionThree() {
                 <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
                     Pilih <span className="italic text-primary">Layanan</span>
                 </h2>
-                <p className="text-muted text-sm max-w-lg mx-auto">
+                <TextHome className="max-w-lg mx-auto lg:text-lg">
                     Akses layanan utama kami untuk mulai menyampaikan aspirasi atau memantau status laporan Anda.
-                </p>
+                </TextHome>
             </div>
 
             {/* Grid: 1 kolom di mobile, 2 kolom di md+ */}
@@ -64,13 +65,13 @@ export default function SectionThree() {
 
                         {/* Konten: kanan di mobile, bawah di desktop */}
                         <div className="flex flex-col justify-center px-4 py-3 md:p-6 flex-1 min-w-0">
-                            <h3 className=" text-sm md:text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors truncate md:whitespace-normal">
+                            <h3 className=" text-sm md:text-base lg:text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors truncate md:whitespace-normal">
                                 {data.name}
                             </h3>
-                            <p className="text-muted text-xs leading-relaxed mb-2 md:mb-4 line-clamp-5 md:line-clamp-none">
+                            <p className="text-muted text-xs lg:text-base leading-relaxed mb-2 md:mb-4 line-clamp-5 md:line-clamp-none">
                                 {data.description}
                             </p>
-                            <div className={`flex items-center gap-1 text-xs font-semibold ${data.linkColor} group-hover:gap-3 transition-all duration-300`}>
+                            <div className={`flex items-center gap-1 text-xs lg:text-base font-semibold ${data.linkColor} group-hover:gap-3 transition-all duration-300`}>
                                 Pilih Layanan ini <span>→</span>
                             </div>
                         </div>

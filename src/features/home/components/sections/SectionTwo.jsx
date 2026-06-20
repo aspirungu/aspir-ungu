@@ -1,4 +1,4 @@
-import React from 'react'
+import TextHome from "@/components/ui/typography/TextHome"
 
 const features = [
   { icon: "📝", title: "Pengaduan Terorganisir", desc: "Sampaikan aspirasi melalui form terstruktur yang dilengkapi pengelompokan kategori dan unggah bukti gambar." },
@@ -36,10 +36,10 @@ export default function SectionTwo() {
         <span className="italic text-primary">kekuatan perubahan.</span>
       </h2>
 
-      <p className="text-muted text-sm leading-relaxed max-w-xl mb-8">
+      <TextHome className="max-w-xl mb-8">
         Aspir Ungu adalah platform resmi milik BEM Universitas Amikom Purwokerto
         — wadah aspirasi, kritik, saran, dan pengaduan mahasiswa secara mudah dan transparan.
-      </p>
+      </TextHome>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {features.map(({ icon, title, desc }) => (

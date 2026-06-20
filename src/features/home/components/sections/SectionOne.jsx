@@ -1,4 +1,5 @@
 import AspirationTimeline from "@/components/ui/card/dasboard-admin/AspirationTimeline"
+import TextHome from "@/components/ui/typography/TextHome"
 
 export default function SectionOne({ totalIn = 0, totalResolved = 0, timelineData = [] }) {
     const resolveRate = totalIn > 0 ? Math.round((totalResolved / totalIn) * 100) : 0
@@ -38,10 +39,10 @@ export default function SectionOne({ totalIn = 0, totalResolved = 0, timelineDat
                     Yuk <em className="text-primary not-italic">Sampaikan.</em>
                 </h1>
 
-                <p className="text-muted text-base leading-relaxed mb-6 max-w-md">
+                <TextHome variant="hero" className="mb-6 max-w-md lg:text-xl">
                     Suaramu penting. Aspir Ungu hadir sebagai jembatan antara mahasiswa
                     dan BEM — cepat, mudah, dan transparan.
-                </p>
+                </TextHome>
 
                 <button
                     onClick={scrollToLayanan}
@@ -54,7 +55,9 @@ export default function SectionOne({ totalIn = 0, totalResolved = 0, timelineDat
                     {stats.map(([num, label]) => (
                         <div key={label}>
                             <div className="text-3xl font-light text-primary">{num}</div>
-                            <div className="text-xs text-muted mt-1">{label}</div>
+                            <TextHome>
+                                {label}
+                            </TextHome>
                         </div>
                     ))}
                 </div>

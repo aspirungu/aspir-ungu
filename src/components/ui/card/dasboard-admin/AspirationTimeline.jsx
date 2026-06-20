@@ -91,7 +91,7 @@ function MiniAreaChart({ data, width = 400, height = 120 }) {
 
       {tooltip && (
         <div
-          className="absolute z-10 rounded-xl px-3 py-2 text-xs shadow-lg pointer-events-none"
+          className="absolute z-10 rounded-xl px-3 py-2 text-xs lg:text-lg shadow-lg pointer-events-none"
           style={{
             background: 'var(--foreground)',
             color: 'var(--background)',
@@ -116,7 +116,7 @@ function MiniAreaChart({ data, width = 400, height = 120 }) {
       <div className="flex justify-between mt-1 px-2">
         {data.map((d, i) =>
           (i === 0 || i === data.length - 1 || data.length <= 5) ? (
-            <span key={i} className="text-xs" style={{ color: 'var(--muted)' }}>{d.date}</span>
+            <span key={i} className="text-xs lg:text-lg" style={{ color: 'var(--muted)' }}>{d.date}</span>
           ) : null
         )}
       </div>
@@ -142,30 +142,30 @@ export default function AspirationTimeline({ timelineData = [], totalIn = 0, tot
     >
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
-          <h3 className="font-semibold text-base" style={{ color: 'var(--foreground)' }}>
+          <h3 className="font-semibold text-base lg:text-2xl" style={{ color: 'var(--foreground)' }}>
             Tren Pengaduan
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: 'var(--muted)' }}>
+          <p className="text-xs mt-0.5 lg:text-xl" style={{ color: 'var(--muted)' }}>
             Aktivitas pengaduan berdasarkan waktu masuk
           </p>
         </div>
         <div className="flex items-center gap-4">
           <div className="text-center">
-            <p className="text-xs" style={{ color: 'var(--muted)' }}>Masuk</p>
+            <p className="text-xs lg:text-lg" style={{ color: 'var(--muted)' }}>Masuk</p>
             <p className="text-lg font-bold" style={{ color: 'var(--primary)' }}>{totalIn}</p>
           </div>
           <div className="text-center">
-            <p className="text-xs" style={{ color: 'var(--muted)' }}>Terselesaikan</p>
+            <p className="text-xs lg:text-lg" style={{ color: 'var(--muted)' }}>Terselesaikan</p>
             <p className="text-lg font-bold" style={{ color: '#22c55e' }}>{totalResolved}</p>
           </div>
           <div className="text-center">
-            <p className="text-xs" style={{ color: 'var(--muted)' }}>Rate</p>
+            <p className="text-xs lg:text-lg" style={{ color: 'var(--muted)' }}>Persentase</p>
             <p className="text-lg font-bold" style={{ color: 'var(--foreground)' }}>{resolveRate}%</p>
           </div>
         </div>
       </div>
 
-      <div className="flex items-center gap-4 text-xs" style={{ color: 'var(--muted)' }}>
+      <div className="flex items-center gap-4 text-xs lg:text-lg" style={{ color: 'var(--muted)' }}>
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-5 h-0.5 rounded" style={{ background: '#7c3aed' }} />
           Total Masuk
@@ -175,7 +175,7 @@ export default function AspirationTimeline({ timelineData = [], totalIn = 0, tot
             className="inline-block w-5 h-0.5 rounded"
             style={{ background: '#22c55e', backgroundImage: 'repeating-linear-gradient(90deg, #22c55e 0, #22c55e 6px, transparent 6px, transparent 9px)' }}
           />
-          Resolved
+          Terselesaikan
         </span>
       </div>
 
