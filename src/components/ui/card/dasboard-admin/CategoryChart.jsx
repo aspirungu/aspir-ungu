@@ -25,15 +25,15 @@ export default function CategoryChart({ categoryData = [] }) {
     >
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-semibold text-base" style={{ color: 'var(--foreground)' }}>
+          <h3 className="font-semibold text-base xl:text-2xl" style={{ color: 'var(--foreground)' }}>
             Pengaduan per Kategori
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: 'var(--muted)' }}>
+          <p className="text-xs xl:text-lg mt-0.5" style={{ color: 'var(--muted)' }}>
             Proporsi tiap kategori dari total keseluruhan
           </p>
         </div>
         <span
-          className="text-xs px-2.5 py-1 rounded-full font-medium"
+          className="text-xs xl:text-base px-2.5 py-1 rounded-full font-medium"
           style={{ background: 'var(--border)', color: 'var(--muted)' }}
         >
           Total: {total}
@@ -60,12 +60,12 @@ export default function CategoryChart({ categoryData = [] }) {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ background: color }} />
-                  <span className="text-sm font-medium" style={{ color: 'var(--foreground)' }}>
+                  <span className="text-sm xl:text-base font-medium" style={{ color: 'var(--foreground)' }}>
                     {d.label}
                   </span>
                 </div>
                 <span
-                  className="text-xs font-bold px-1.5 py-0.5 rounded"
+                  className="text-xs xl:text-sm font-bold px-1.5 py-0.5 rounded"
                   style={{ background: `${color}20`, color }}
                 >
                   {d.total}/{total}
@@ -79,7 +79,7 @@ export default function CategoryChart({ categoryData = [] }) {
                 />
               </div>
 
-              <p className="text-xs" style={{ color: 'var(--muted)' }}>
+              <p className="text-xs xl:text-sm" style={{ color: 'var(--muted)' }}>
                 {pct.toFixed(1)}% dari keseluruhan
               </p>
             </div>

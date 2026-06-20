@@ -29,13 +29,18 @@ export default function CekPengaduanContent() {
     }
 
     return (
-        <Hero>
+        <Hero className={'mt-10'}>
             <HeroText>Cek Pengaduan</HeroText>
-            <SearchInput onSearch={handleSearch} />
+            <SearchInput
+                onSearch={handleSearch}
+                className="[&_input]:lg:text-lg [&_input]:xl:text-xl [&_p]:lg:text-base [&_p]:xl:text-lg"
+            />
 
             {/* Loading */}
             {loading && (
-                <MainLoading text='Mencari Pengaduan ...'/>
+                <div className="[&_span]:lg:text-lg [&_span]:xl:text-xl [&_svg]:lg:w-6 [&_svg]:lg:h-6 [&_svg]:xl:w-7 [&_svg]:xl:h-7">
+                    <MainLoading text='Mencari Pengaduan ...'/>
+                </div>
             )}
 
             {/* Result */}
@@ -43,7 +48,7 @@ export default function CekPengaduanContent() {
 
             {/* Error */}
             {error && (
-                <div className="w-full max-w-2xl flex items-start gap-3 bg-red-600/60 border border-red-400/30 backdrop-blur-sm text-white px-4 py-3 rounded-2xl
+                <div className="w-full max-w-2xl xl:max-w-3xl flex items-start gap-3 bg-red-600/60 border border-red-400/30 backdrop-blur-sm text-white px-4 py-3 rounded-2xl
                     animate-[fadeSlideDown_0.3s_ease_forwards]">
                     <div className="mt-0.5 shrink-0 w-8 h-8 rounded-full bg-red-400/20 flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-red-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
@@ -53,8 +58,8 @@ export default function CekPengaduanContent() {
                         </svg>
                     </div>
                     <div>
-                        <p className="text-sm text-left font-semibold text-red-300">Pengaduan tidak ditemukan</p>
-                        <p className="text-xs text-left text-red-200 mt-0.5">{error}</p>
+                        <p className="text-sm lg:text-lg xl:text-xl text-left font-semibold text-red-300">Pengaduan tidak ditemukan</p>
+                        <p className="text-xs lg:text-base xl:text-lg text-left text-red-200 mt-0.5">{error}</p>
                     </div>
                 </div>
             )}

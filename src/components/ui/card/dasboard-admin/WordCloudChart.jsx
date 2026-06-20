@@ -200,14 +200,14 @@ export default function WordCloudChart({ categories = [] }) {
                 defer
             />
 
-            <div className="bg-white rounded-2xl border border-zinc-200  p-6">
+            <div className="bg-white rounded-2xl border border-zinc-200 p-6">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <div>
-                        <h3 className="text-lg font-semibold text-zinc-900 ">
+                        <h3 className="text-lg xl:text-2xl font-semibold text-zinc-900">
                             Word Cloud Aspirasi
                         </h3>
-                        <p className="text-sm text-zinc-500  mt-0.5">
+                        <p className="text-sm xl:text-lg text-zinc-500 mt-0.5">
                             Kata-kata paling sering muncul dari konten aspirasi
                         </p>
                     </div>
@@ -218,7 +218,7 @@ export default function WordCloudChart({ categories = [] }) {
                         <select
                             value={selectedCategory}
                             onChange={e => setSelectedCategory(e.target.value)}
-                            className="text-sm border border-zinc-200  rounded-lg px-3 py-2 bg-white  text-zinc-700  focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            className="text-sm xl:text-base border border-zinc-200 rounded-lg px-3 py-2 bg-white text-zinc-700 focus:outline-none focus:ring-2 focus:ring-primary/40"
                             disabled={loading}
                         >
                             <option value="all">Semua Kategori</option>
@@ -233,7 +233,7 @@ export default function WordCloudChart({ categories = [] }) {
                         <button
                             onClick={handleGenerate}
                             disabled={loading}
-                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white text-sm xl:text-base font-medium hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             {loading ? (
                                 <>
@@ -269,8 +269,8 @@ export default function WordCloudChart({ categories = [] }) {
                                     <rect x="3" y="3" width="18" height="18" rx="4" />
                                 </svg>
                             </div>
-                            <p className="text-zinc-500  text-sm max-w-xs">
-                                Klik <span className="font-medium text-zinc-700 ">Generate Word Cloud</span> untuk memvisualisasikan kata-kata dari aspirasi mahasiswa
+                            <p className="text-zinc-500 text-sm xl:text-lg max-w-xs xl:max-w-md">
+                                Klik <span className="font-medium text-zinc-700">Generate Word Cloud</span> untuk memvisualisasikan kata-kata dari aspirasi mahasiswa
                             </p>
                         </div>
                     )}
@@ -287,7 +287,7 @@ export default function WordCloudChart({ categories = [] }) {
                                     />
                                 ))}
                             </div>
-                            <p className="text-sm text-zinc-500 ">
+                            <p className="text-sm xl:text-lg text-zinc-500">
                                 AI sedang menganalisis aspirasi...
                             </p>
                         </div>
@@ -302,10 +302,10 @@ export default function WordCloudChart({ categories = [] }) {
                                     <path d="M12 8v4m0 4h.01" strokeLinecap="round" />
                                 </svg>
                             </div>
-                            <p className="text-sm text-red-600 ">{error}</p>
+                            <p className="text-sm xl:text-lg text-red-600">{error}</p>
                             <button
                                 onClick={handleGenerate}
-                                className="text-xs text-primary underline hover:no-underline"
+                                className="text-xs xl:text-base text-primary underline hover:no-underline"
                             >
                                 Coba lagi
                             </button>
@@ -326,7 +326,7 @@ export default function WordCloudChart({ categories = [] }) {
 
                 {/* Footer info */}
                 {hasGenerated && words.length > 0 && !loading && (
-                    <p className="text-xs text-zinc-400  mt-3 text-right">
+                    <p className="text-xs xl:text-base text-zinc-400 mt-3 text-right">
                         {words.length} kata teridentifikasi · {selectedLabel}
                     </p>
                 )}

@@ -58,10 +58,10 @@ export default function StatCard({
       <div className={`absolute left-0 top-1/4 bottom-1/4 w-1 rounded-r-full transition-all duration-300 opacity-0 group-hover:opacity-100 ${s.accent}`} />
 
       <div className="flex flex-col gap-1">
-        <p className="text-[10px] font-bold text-muted uppercase tracking-widest">{title}</p>
-        <h2 className="text-3xl font-bold text-foreground leading-none my-1">{count}</h2>
+        <p className="text-[10px] xl:text-sm font-bold text-muted uppercase tracking-widest">{title}</p>
+        <h2 className="text-3xl xl:text-4xl font-bold text-foreground leading-none my-1">{count}</h2>
         {href && (
-          <div className="flex items-center gap-1 text-[10px] font-bold text-primary/60 group-hover:text-primary transition-colors mt-1 uppercase tracking-tighter">
+          <div className="flex items-center gap-1 text-[10px] xl:text-xs font-bold text-primary/60 group-hover:text-primary transition-colors mt-1 uppercase tracking-tighter">
             Detail Laporan <span>→</span>
           </div>
         )}

@@ -93,7 +93,7 @@ export default function SearchResult({ data }) {
     }
 
     return (
-        <div className="w-full max-w-2xl mx-auto mt-6 animate-fadeUp">
+        <div className="w-full max-w-2xl xl:max-w-3xl mx-auto mt-6 animate-fadeUp [&_p]:lg:text-base [&_p]:xl:text-lg [&_span]:lg:text-base [&_span]:xl:text-lg [&_a]:lg:text-base [&_a]:xl:text-lg">
             <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
 
                 {/* Top accent bar */}
@@ -102,25 +102,25 @@ export default function SearchResult({ data }) {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between px-6 pt-5 pb-4 items-center gap-3">
                     <div>
-                        <p className="text-xs font-semibold tracking-widest text-primary/60 uppercase mb-1">
+                        <p className="text-xs lg:text-sm xl:text-base font-semibold tracking-widest text-primary/60 uppercase mb-1">
                             Tracking Code
                         </p>
-                        <h2 className="text-base md:text-lg font-bold text-gray-800 leading-tight">
+                        <h2 className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-800 leading-tight">
                             {data.tracking_code}
                         </h2>
                         {data.category?.name && (
-                            <p className="text-xs text-gray-400 mt-1">{data.category.name}</p>
+                            <p className="text-xs lg:text-base xl:text-lg text-gray-400 mt-1">{data.category.name}</p>
                         )}
                     </div>
 
                     {/* Status Badge */}
                     <div className="flex flex-col gap-1 shrink-0">
-                        <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${status.bg} ${status.text} ${status.border}`}>
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs lg:text-base xl:text-lg font-semibold border ${status.bg} ${status.text} ${status.border}`}>
                             {status.icon}
                             {status.label}
                         </span>
                         {status.description && (
-                            <p className="text-[10px] text-gray-400 text-right max-w-36 leading-tight">
+                            <p className="text-[10px] lg:text-sm xl:text-base text-gray-400 text-right max-w-36 xl:max-w-48 leading-tight">
                                 {status.description}
                             </p>
                         )}
@@ -139,12 +139,12 @@ export default function SearchResult({ data }) {
                         </svg>
                     </div>
                     <div className="flex flex-col items-start">
-                        <p className="text-sm font-semibold text-gray-800">
+                        <p className="text-sm lg:text-lg xl:text-xl font-semibold text-gray-800">
                             {data.name ?? 'Anonim'}
                         </p>
-                        <p className="text-xs text-gray-400">{data.nim ?? '-'}</p>
+                        <p className="text-xs lg:text-base xl:text-lg text-gray-400">{data.nim ?? '-'}</p>
                         {data.email && (
-                            <p className="text-xs text-gray-400">{data.email}</p>
+                            <p className="text-xs lg:text-base xl:text-lg text-gray-400">{data.email}</p>
                         )}
                     </div>
                 </div>
@@ -156,7 +156,7 @@ export default function SearchResult({ data }) {
                             href={data.image_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl border border-dashed border-primary/40 bg-primary/5 text-primary text-sm font-medium hover:bg-primary/10 transition-colors"
+                            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl border border-dashed border-primary/40 bg-primary/5 text-primary text-sm lg:text-base xl:text-lg font-medium hover:bg-primary/10 transition-colors"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
                                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -177,18 +177,18 @@ export default function SearchResult({ data }) {
                 <div className="px-6 pb-4 space-y-4">
                     {/* Isi Pengaduan */}
                     <div className="bg-gray-50 rounded-2xl p-4">
-                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">
+                        <p className="text-xs lg:text-sm xl:text-base font-semibold text-gray-400 uppercase tracking-wider mb-1.5">
                             Isi Pengaduan
                         </p>
-                        <p className="text-sm text-gray-700 leading-relaxed">{data.content}</p>
+                        <p className="text-sm lg:text-base xl:text-lg text-gray-700 leading-relaxed">{data.content}</p>
                     </div>
 
                     {/* Tanggapan */}
                     <div className="bg-primary/5 border border-primary/20 rounded-2xl p-4">
-                        <p className="text-xs font-semibold text-primary/60 uppercase tracking-wider mb-1.5">
+                        <p className="text-xs lg:text-sm xl:text-base font-semibold text-primary/60 uppercase tracking-wider mb-1.5">
                             Tanggapan
                         </p>
-                        <p className="text-sm text-gray-700 leading-relaxed">
+                        <p className="text-sm lg:text-base xl:text-lg text-gray-700 leading-relaxed">
                             {data.response ?? 'Belum ada tanggapan dari BEM'}
                         </p>
                     </div>
@@ -196,7 +196,7 @@ export default function SearchResult({ data }) {
 
                 {/* Footer timestamps */}
                 <div className="mx-6 mb-5 flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-gray-100">
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                    <div className="flex items-center gap-1.5 text-xs lg:text-base xl:text-lg text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
@@ -205,7 +205,7 @@ export default function SearchResult({ data }) {
                         </svg>
                         <span>Dibuat: {formatDate(data.created_at)}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                    <div className="flex items-center gap-1.5 text-xs lg:text-base xl:text-lg text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
                             <polyline points="23 4 23 10 17 10" />
                             <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />

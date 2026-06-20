@@ -21,6 +21,7 @@ const STOPWORDS = new Set([
     "bahwa", "serta", "agar", "karena", "setelah", "sebelum", "ketika",
     "sehingga", "walaupun", "meskipun", "ataupun", "maupun", "yaitu",
     "yakni", "seperti", "antara", "tanpa", "melalui", "terhadap", "tentang",
+    "banget", "bagian", "aduh", "coba",
 
     // Kata ganti & kata tunjuk
     "saya", "kami", "kita", "mereka", "dia", "ia", "anda", "kamu",

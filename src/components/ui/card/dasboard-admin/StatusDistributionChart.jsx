@@ -18,15 +18,17 @@ function DonutChart({ data, total }) {
   const strokeWidth = 22
   const circumference = 2 * Math.PI * radius
 
-  let offset = 0
-  const slices = data.map((d) => {
+  const slices = data.reduce((acc, d) => {
     const pct = d.count / total
     const dash = pct * circumference
     const gap = circumference - dash
-    const slice = { ...d, dash, gap, offset, pct }
-    offset += dash
-    return slice
-  })
+    const slice = { ...d, dash, gap, offset: acc.offset, pct }
+
+    return {
+      offset: acc.offset + dash,
+      slices: [...acc.slices, slice],
+    }
+  }, { offset: 0, slices: [] }).slices
 
   const active = hovered !== null ? data[hovered] : null
 
@@ -78,12 +80,12 @@ function DonutChart({ data, total }) {
           >
             <div className="flex items-center gap-2 min-w-0">
               <span className="inline-block rounded-full shrink-0" style={{ width: 10, height: 10, background: d.color }} />
-              <span className="text-sm truncate" style={{ color: 'var(--muted)' }}>{d.label}</span>
+              <span className="text-sm xl:text-base truncate" style={{ color: 'var(--muted)' }}>{d.label}</span>
             </div>
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-sm font-bold" style={{ color: 'var(--foreground)' }}>{d.count}</span>
+              <span className="text-sm xl:text-base font-bold" style={{ color: 'var(--foreground)' }}>{d.count}</span>
               <span
-                className="text-xs px-1.5 py-0.5 rounded-full font-medium"
+                className="text-xs xl:text-sm px-1.5 py-0.5 rounded-full font-medium"
                 style={{ background: `${d.color}20`, color: d.color }}
               >
                 {Math.round(d.pct * 100)}%
@@ -118,15 +120,15 @@ export default function StatusDistributionChart({ statusData = [], total = 0 }) 
     >
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-semibold text-base" style={{ color: 'var(--foreground)' }}>
+          <h3 className="font-semibold text-base xl:text-2xl" style={{ color: 'var(--foreground)' }}>
             Distribusi Status
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: 'var(--muted)' }}>
+          <p className="text-xs xl:text-lg mt-0.5" style={{ color: 'var(--muted)' }}>
             Semua pengaduan berdasarkan status
           </p>
         </div>
         <span
-          className="text-xs px-2.5 py-1 rounded-full font-medium"
+          className="text-xs xl:text-base px-2.5 py-1 rounded-full font-medium"
           style={{ background: 'var(--primary-light)', color: 'var(--primary)' }}
         >
           {total} Total

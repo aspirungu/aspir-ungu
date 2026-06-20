@@ -19,7 +19,7 @@ export default function SearchInput({ className, onSearch }) {
     const errorMessage = errors?.trackingCode?.message
 
     return (
-        <div className={`w-full max-w-2xl flex flex-col gap-2 ${className}`}>
+        <div className={`w-full max-w-2xl xl:max-w-3xl flex flex-col gap-2 ${className}`}>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className={`flex items-center rounded-2xl border-2 overflow-hidden bg-white transition-colors duration-200
@@ -32,12 +32,12 @@ export default function SearchInput({ className, onSearch }) {
                     {...register('trackingCode')}
                     type="text"
                     placeholder="Masukan tracking code pengaduan"
-                    className={`text-sm md:text-base bg-transparent p-2 px-3 focus:ring-0 outline-none w-full h-12 placeholder:transition-colors
+                    className={`text-sm md:text-base bg-transparent p-2 px-3 focus:ring-0 outline-none w-full h-12 xl:h-14 placeholder:transition-colors
                         ${errorMessage ? 'placeholder:text-red-300' : 'placeholder:text-gray-400'}`}
                 />
                 <button
                     type="submit"
-                    className={`flex items-center justify-center transition-all duration-150 active:scale-95 px-4 h-12 py-2 text-white shrink-0
+                    className={`flex items-center justify-center transition-all duration-150 active:scale-95 px-4 xl:px-5 h-12 xl:h-14 py-2 text-white shrink-0
         ${errorMessage
                             ? 'bg-red-400 hover:bg-red-500'
                             : 'bg-primary hover:bg-primary/90'
@@ -52,7 +52,7 @@ export default function SearchInput({ className, onSearch }) {
                         strokeWidth={2.5}
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="w-5 h-5"
+                        className="w-5 h-5 xl:w-6 xl:h-6"
                     >
                         <circle cx="11" cy="11" r="8" />
                         <line x1="21" y1="21" x2="16.65" y2="16.65" />

@@ -16,7 +16,7 @@ export default function BerandaContent({ stats, timelineData, statusData, catego
             <div className="bg-primary/50 border border-primary/10 w-full rounded-3xl items-start flex flex-col py-6 px-6 gap-6">
                 <div className="flex items-center gap-3">
                     <div className="w-2 h-8 bg-primary rounded-full" />
-                    <Text className="font-bold text-2xl text-foreground">Status Pengaduan</Text>
+                    <Text className="font-bold text-2xl xl:text-3xl text-foreground">Status Pengaduan</Text>
                 </div>
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <StatCard
