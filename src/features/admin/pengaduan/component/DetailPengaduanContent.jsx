@@ -31,23 +31,23 @@ function FormSelect({ register, name, label, options, errors }) {
     const errorMessage = errors?.[name]?.message
     return (
         <div className='flex flex-col gap-1'>
-            <label className='text-xs font-semibold uppercase  text-text'>{label}</label>
+            <label className='text-xs xl:text-base font-semibold uppercase  text-text'>{label}</label>
             <select
                 {...register(name)}
-                className='text-sm rounded-xl border border-primary/30 bg-transparent p-2 outline-none focus:border-primary'
+                className='text-sm xl:text-base rounded-xl border border-primary/30 bg-transparent p-2 outline-none focus:border-primary'
             >
                 {options.map((opt) => (
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                 ))}
             </select>
-            {errorMessage && <p className='text-red-500 text-xs'>{errorMessage}</p>}
+            {errorMessage && <p className='text-red-500 text-xs xl:text-sm'>{errorMessage}</p>}
         </div>
     )
 }
 
 function InfoLabel({ children }) {
     return (
-        <span className='text-[11px] font-semibold uppercase  text-text'>
+        <span className='text-[11px] xl:text-base font-semibold uppercase  text-text'>
             {children}
         </span>
     )
@@ -55,7 +55,7 @@ function InfoLabel({ children }) {
 
 function InfoValue({ children, className = '' }) {
     return (
-        <span className={`text-sm text-gray-800 leading-relaxed ${className}`}>
+        <span className={`text-sm xl:text-base text-gray-800 leading-relaxed ${className}`}>
             {children}
         </span>
     )
@@ -230,7 +230,7 @@ export default function DetailPengaduanContent({ aspiration }) {
 
                             <p className="mb-2 font-semibold underline">Isi Aspirasi:</p>
                             <div className="p-4 rounded-md mb-4 italic whitespace-pre-wrap border" style={{ backgroundColor: '#f9fafb', borderColor: '#e5e7eb' }}>
-                                "{aspiration.content}"
+                                &quot;{aspiration.content}&quot;
                             </div>
 
                             <p className="mb-2">
@@ -283,27 +283,27 @@ export default function DetailPengaduanContent({ aspiration }) {
                                     <polyline points="10 9 9 9 8 9" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-primary">Pengaturan PDF</h3>
+                            <h3 className="text-xl xl:text-2xl font-bold text-primary">Pengaturan PDF</h3>
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                            <label className="text-[11px] font-bold uppercase  text-text/70 ml-1">Nomor Surat</label>
+                            <label className="text-[11px] xl:text-sm font-bold uppercase  text-text/70 ml-1">Nomor Surat</label>
                             <input
                                 type="text"
                                 value={pdfConfig.nomorSurat}
                                 onChange={(e) => setPdfConfig({ ...pdfConfig, nomorSurat: e.target.value })}
-                                className="w-full text-sm rounded-2xl border border-primary/20 bg-gray-50/50 p-3 outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                                className="w-full text-sm xl:text-base rounded-2xl border border-primary/20 bg-gray-50/50 p-3 outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                                 placeholder="Contoh: 001/BEM/2026"
                             />
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                            <label className="text-[11px] font-bold uppercase  text-text/70 ml-1">Ditujukan Kepada</label>
+                            <label className="text-[11px] xl:text-sm font-bold uppercase  text-text/70 ml-1">Ditujukan Kepada</label>
                             <input
                                 type="text"
                                 value={pdfConfig.ditujukanKepada}
                                 onChange={(e) => setPdfConfig({ ...pdfConfig, ditujukanKepada: e.target.value })}
-                                className="w-full text-sm rounded-2xl border border-primary/20 bg-gray-50/50 p-3 outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
+                                className="w-full text-sm xl:text-base rounded-2xl border border-primary/20 bg-gray-50/50 p-3 outline-none focus:border-primary focus:bg-white transition-all shadow-inner"
                                 placeholder="Contoh: Rektor Universitas Amikom Purwokerto"
                             />
                         </div>
@@ -315,7 +315,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                                 onChange={(e) => setPdfConfig({ ...pdfConfig, sembunyikanPelapor: e.target.checked })}
                                 className="w-5 h-5 text-primary rounded-lg border-primary/30 focus:ring-primary cursor-pointer transition-all"
                             />
-                            <span className="text-sm font-semibold text-text">
+                            <span className="text-sm xl:text-base font-semibold text-text">
                                 Sembunyikan Nama Pelapor (Anonim)
                             </span>
                         </label>
@@ -323,7 +323,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                         <div className="flex flex-col sm:flex-row gap-3 mt-2">
                             <button
                                 onClick={() => setShowPdfModal(false)}
-                                className="flex-1 px-5 py-3 rounded-2xl border-2 border-primary/10 text-text/60 text-sm font-bold hover:bg-gray-50 transition-all active:scale-95"
+                                className="flex-1 px-5 py-3 rounded-2xl border-2 border-primary/10 text-text/60 text-sm xl:text-base font-bold hover:bg-gray-50 transition-all active:scale-95"
                             >
                                 Batal
                             </button>
@@ -336,7 +336,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                                     setShowPdfModal(false);
                                     handleDownloadPdf();
                                 }}
-                                className="flex-1 px-5 py-3 rounded-2xl bg-primary text-white text-sm font-bold hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all active:scale-95"
+                                className="flex-1 px-5 py-3 rounded-2xl bg-primary text-white text-sm xl:text-base font-bold hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all active:scale-95"
                             >
                                 Unduh PDF
                             </button>
@@ -350,7 +350,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                     <HeroText>Detail Pengaduan</HeroText>
                     <Link
                         href='/admin/pengaduan'
-                        className='inline-flex items-center gap-1.5 text-sm text-primary font-bold hover:underline w-fit'
+                        className='inline-flex items-center gap-1.5 text-sm xl:text-base text-primary font-bold hover:underline w-fit'
                     >
                         <IoIosArrowBack className="text-lg" />
                         Kembali ke Daftar
@@ -361,7 +361,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                 <button
                     onClick={() => setShowPdfModal(true)}
                     disabled={isGeneratingPdf}
-                    className="flex items-center justify-center sm:justify-start gap-3 border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3.5 rounded-2xl text-sm font-bold transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group w-full sm:w-fit"
+                    className="flex items-center justify-center sm:justify-start gap-3 border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3.5 rounded-2xl text-sm xl:text-base font-bold transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group w-full sm:w-fit"
                 >
                     {isGeneratingPdf ? (
                         <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -381,7 +381,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                 </button>
             </div>
 
-            <div className='w-full max-w-3xl bg-white/80 backdrop-blur-md border-[3px] border-primary shadow-2xl p-5 sm:p-10 rounded-[2.5rem] relative overflow-hidden mx-auto'>
+                <div className='w-full max-w-3xl bg-white/80 backdrop-blur-md border-[3px] border-primary shadow-2xl p-5 sm:p-10 rounded-[2.5rem] relative overflow-hidden mx-auto [&_label]:xl:text-base [&_textarea]:xl:text-base [&_button_p]:xl:text-base'>
                 {(loadingUpdate || isGeneratingPdf) && <LoadingOverlay />}
 
                 {/* Header: Avatar + Nama + Badge Status */}
@@ -390,20 +390,20 @@ export default function DetailPengaduanContent({ aspiration }) {
                         {initials}
                     </div>
                     <div className='flex-1 min-w-0'>
-                        <h2 className='text-xl font-black text-gray-900 leading-tight mb-1'>
+                        <h2 className='text-xl xl:text-2xl font-black text-gray-900 leading-tight mb-1'>
                             {aspiration.name ?? 'Anonim'}
                         </h2>
                         <div className="flex flex-col gap-0.5">
-                            <p className='text-sm font-bold text-gray-500'>
+                            <p className='text-sm xl:text-base font-bold text-gray-500'>
                                 {aspiration.nim ?? '-'}
                             </p>
                             {aspiration.email && (
-                                <p className='text-sm font-medium text-primary hover:underline'>{aspiration.email}</p>
+                                <p className='text-sm xl:text-base font-medium text-primary hover:underline'>{aspiration.email}</p>
                             )}
                         </div>
                     </div>
                     <div className="sm:ml-auto pt-2">
-                        <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-black uppercase  shadow-sm
+                        <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-xs xl:text-sm font-black uppercase  shadow-sm
                             ${aspiration.status === 'pending' ? 'bg-amber-100 text-amber-700' :
                                 aspiration.status === 'resolved' ? 'bg-green-100 text-green-700' :
                                     aspiration.status === 'in_progress' ? 'bg-blue-100 text-blue-700' :
@@ -416,8 +416,8 @@ export default function DetailPengaduanContent({ aspiration }) {
 
                 {/* Tracking Code pill */}
                 <div className='flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-primary text-background mb-8 w-full sm:w-fit justify-center shadow-lg shadow-primary/20'>
-                    <span className='text-sm opacity-60'>CODE:</span>
-                    <span className='text-sm font-mono font-black '>
+                    <span className='text-sm xl:text-base opacity-60'>CODE:</span>
+                    <span className='text-sm xl:text-base font-mono font-black '>
                         #{aspiration.tracking_code}
                     </span>
                 </div>
@@ -427,7 +427,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                         href={aspiration.image_url}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='flex items-center justify-center gap-3 w-full rounded-2xl border-2 border-dashed border-primary/30 bg-primary/5 text-primary text-sm font-bold px-4 py-4 mb-8 hover:bg-primary/10 hover:border-primary transition-all group'
+                        className='flex items-center justify-center gap-3 w-full rounded-2xl border-2 border-dashed border-primary/30 bg-primary/5 text-primary text-sm xl:text-base font-bold px-4 py-4 mb-8 hover:bg-primary/10 hover:border-primary transition-all group'
                     >
                         <svg xmlns='http://www.w3.org/2000/svg' className='w-5 h-5 group-hover:scale-110 transition-transform' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2.5} strokeLinecap='round' strokeLinejoin='round'>
                             <rect x='3' y='3' width='18' height='18' rx='2' ry='2' />
@@ -471,15 +471,15 @@ export default function DetailPengaduanContent({ aspiration }) {
                         <div className="w-1.5 h-4 bg-primary rounded-full"></div>
                         <InfoLabel>Isi Pengaduan Mahasiswa</InfoLabel>
                     </div>
-                    <div className='bg-primary/95 shadow-inner rounded-3xl p-5 sm:p-7 text-sm sm:text-base leading-relaxed text-background font-medium italic whitespace-pre-wrap'>
-                        "{aspiration.content}"
+                    <div className='bg-primary/95 shadow-inner rounded-3xl p-5 sm:p-7 text-sm sm:text-base xl:text-lg leading-relaxed text-background font-medium italic whitespace-pre-wrap'>
+                        &quot;{aspiration.content}&quot;
                     </div>
                 </div>
 
                 <div className="h-px bg-gray-100 mb-8 w-full"></div>
 
                 {/* Form editable */}
-                <form onSubmit={handleSubmit(onUpdate)} className='flex flex-col gap-6'>
+                    <form onSubmit={handleSubmit(onUpdate)} className='flex flex-col gap-6'>
                     <div className='w-full sm:w-1/2'>
                         <FormSelect register={register} name='status' label='Update Status Pengaduan' options={STATUS_OPTIONS} errors={errors} />
                     </div>
@@ -489,7 +489,7 @@ export default function DetailPengaduanContent({ aspiration }) {
                         name='response'
                         label='Berikan Respon / Tanggapan'
                         placeholder='Tuliskan langkah tindak lanjut atau jawaban untuk mahasiswa...'
-                        className='h-40 rounded-3xl'
+                        className='h-40 rounded-3xl xl:text-base'
                         errors={errors}
                     />
 
