@@ -17,7 +17,7 @@ export default function ChoosePengaduanContent() {
                 className="text-center mt-10"
             >
                 <HeroText className="mb-4">Pilih Jenis Pengaduan</HeroText>
-                <p className="text-muted text-sm max-w-xl mx-auto">
+                <p className="text-foreground text-sm lg:text-xl max-w-2xl mx-auto">
                     Silakan pilih kategori yang paling sesuai dengan aspirasi atau keluhan Anda agar dapat ditindaklanjuti oleh divisi yang tepat.
                 </p>
             </motion.div>

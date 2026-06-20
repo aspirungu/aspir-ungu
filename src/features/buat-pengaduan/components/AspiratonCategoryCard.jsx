@@ -85,10 +85,10 @@ export default function AspiratonCategoryCard() {
                             <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                                 {data?.name}
                             </h3>
-                            <p className="text-muted text-xs leading-relaxed mb-4 grow">
+                            <p className="text-muted text-xs lg:text-lg leading-relaxed mb-4 grow">
                                 {data?.description || "Sampaikan aspirasi Anda untuk kategori ini."}
                             </p>
-                            <div className="flex items-center gap-2 text-primary font-semibold text-xs group-hover:gap-3 transition-all">
+                            <div className="flex items-center gap-2 text-primary font-semibold text-xs lg:text-lg group-hover:gap-3 transition-all">
                                 Pilih Kategori <span className="text-lg">→</span>
                             </div>
                         </div>
